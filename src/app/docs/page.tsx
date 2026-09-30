@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Terminal from "@/components/Terminal";
 
 export const metadata: Metadata = {
-  title: "EnvSync Documentation — CLI Reference & Setup Guide",
+  title: "P2P EnvSync Documentation — CLI Reference & Setup Guide",
   description:
-    "Quick start, CLI command reference (create, join, sync, invite, backup-init, status, reveal, history), tray app usage and the EnvSync security model.",
+    "Quick start, CLI command reference (create, join, sync, invite, backup-init, status, reveal, history), tray app usage and the P2P EnvSync security model.",
   alternates: { canonical: "/docs" },
 };
 

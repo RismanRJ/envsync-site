@@ -13,7 +13,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 font-semibold text-gray-100">
           <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
-          EnvSync
+          P2P EnvSync
         </Link>
         <ul className="flex items-center gap-4 text-sm text-gray-400 sm:gap-6">
           {links.map((l) => (

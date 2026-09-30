@@ -46,7 +46,7 @@ export default function Post() {
 
       <h2 className={h2}>A peer-to-peer developer workflow</h2>
       <p className={p}>
-        EnvSync takes a different approach. Your .env is encrypted with AES-256-GCM into a local vault. Teammates
+        P2P EnvSync takes a different approach. Your .env is encrypted with AES-256-GCM into a local vault. Teammates
         share a room key once, out-of-band, then sync directly over the LAN. There is no server to run and no cloud
         to trust. Only changed values move between peers, and every change is recorded in a history you can inspect.
       </p>

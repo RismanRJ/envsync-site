@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "EnvSync Blog",
-  description: "Articles on env file management, secrets management and developer workflow from the EnvSync team.",
+  title: "P2P EnvSync Blog",
+  description: "Articles on env file management, secrets management and developer workflow from the P2P EnvSync team.",
   alternates: { canonical: "/blog" },
 };
 
 export default function Blog() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-4xl font-bold">EnvSync Blog</h1>
+      <h1 className="text-4xl font-bold">P2P EnvSync Blog</h1>
       <p className="mt-3 text-gray-400">More posts on secrets management and developer workflow are coming soon.</p>
       <Link
         href="/blog/why-env-files-are-broken"

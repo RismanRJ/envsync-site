@@ -36,10 +36,10 @@ const rows = [
 
 const faqs = [
   ["Is it safe to sync .env files over the network?", "Yes. Every value is encrypted with AES-256-GCM using the room key before it leaves your machine, and the key itself is never transmitted over the network. Peers without the key see only ciphertext."],
-  ["What happens if I'm not on the same network as my team?", "EnvSync is LAN-first, so remote peers won't discover each other automatically. Your vault keeps working offline, and you can use the optional encrypted GitHub backup to exchange changes across networks."],
-  ["How is this different from HashiCorp Vault?", "Vault is a central secrets server you must deploy, unseal, and operate. EnvSync has no server at all: teammates sync directly, which suits small teams that just need to share .env files safely."],
-  ["Can I use this with Docker / CI/CD?", "Yes for local Docker workflows: sync your .env, then point docker compose at it. For CI/CD, keep using your CI provider's secret store; EnvSync targets developer machines."],
-  ["What encryption does EnvSync use?", "AES-256-GCM authenticated encryption. Values are encrypted at rest in the local vault and in transit during sync."],
+  ["What happens if I'm not on the same network as my team?", "P2P EnvSync is LAN-first, so remote peers won't discover each other automatically. Your vault keeps working offline, and you can use the optional encrypted GitHub backup to exchange changes across networks."],
+  ["How is this different from HashiCorp Vault?", "Vault is a central secrets server you must deploy, unseal, and operate. P2P EnvSync has no server at all: teammates sync directly, which suits small teams that just need to share .env files safely."],
+  ["Can I use this with Docker / CI/CD?", "Yes for local Docker workflows: sync your .env, then point docker compose at it. For CI/CD, keep using your CI provider's secret store; P2P EnvSync targets developer machines."],
+  ["What encryption does P2P EnvSync use?", "AES-256-GCM authenticated encryption. Values are encrypted at rest in the local vault and in transit during sync."],
 ];
 
 const btn = "rounded-lg px-5 py-2.5 text-sm font-medium transition-colors";
@@ -105,12 +105,12 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-4xl px-4 py-16">
-        <h2 className="mb-8 text-3xl font-bold">EnvSync vs alternatives</h2>
+        <h2 className="mb-8 text-3xl font-bold">P2P EnvSync vs alternatives</h2>
         <div className="overflow-x-auto rounded-xl border border-white/10">
           <table className="w-full text-left text-sm">
             <thead className="bg-white/[0.04] text-gray-300">
               <tr>
-                {["Feature", "EnvSync", "Doppler", "1Password", ".env in Slack"].map((h, i) => (
+                {["Feature", "P2P EnvSync", "Doppler", "1Password", ".env in Slack"].map((h, i) => (
                   <th key={h} className={`px-4 py-3 ${i === 1 ? "text-green-400" : ""}`}>{h}</th>
                 ))}
               </tr>

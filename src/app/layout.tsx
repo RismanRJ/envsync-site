@@ -8,9 +8,9 @@ import "./globals.css";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 const SITE = "https://p2penvsync.vercel.app";
-const title = "EnvSync — P2P Encrypted .env Sync for Dev Teams";
+const title = "P2P EnvSync — Encrypted .env Sync for Dev Teams";
 const description =
-  "EnvSync is a peer-to-peer, end-to-end encrypted env sync tool for dotenv files. LAN-first, offline-first secrets management for developer teams — no server, no cloud, open source team collaboration.";
+  "P2P EnvSync is a peer-to-peer, end-to-end encrypted env sync tool for dotenv files. LAN-first, offline-first secrets management for developer teams — no server, no cloud, open source team collaboration.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     ".env sharing",
   ],
   authors: [{ name: "RismanRJ" }],
-  openGraph: { title, description, url: SITE, siteName: "EnvSync", type: "website" },
+  openGraph: { title, description, url: SITE, siteName: "P2P EnvSync", type: "website" },
   twitter: { card: "summary_large_image", title, description },
   alternates: { canonical: "/" },
 };
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "EnvSync",
+  name: "P2P EnvSync",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "macOS, Linux, Windows",
   description,
