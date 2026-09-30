@@ -63,6 +63,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-sm px-4 py-16">
+        <video
+          src="/promo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full rounded-2xl border border-white/10 shadow-2xl shadow-green-500/10"
+        />
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="mb-8 text-3xl font-bold">The .env problem every team has</h2>
         <ul className="grid gap-4 sm:grid-cols-2">
