@@ -1,0 +1,105 @@
+# P2P EnvSync — Full Documentation
+
+> P2P encrypted .env sync for developer teams. No server. No cloud. Just your team on the same LAN.
+
+## What is P2P EnvSync?
+
+P2P EnvSync is a free, open-source CLI tool that solves the .env file sharing problem every development team faces. Instead of sharing secrets over Slack DMs, email, or sticky notes, P2P EnvSync lets teammates sync .env files directly over the local network using AES-256-GCM encryption.
+
+## The Problem
+
+- Developers share secrets over Slack, email, and sticky notes
+- New team members wait hours for the right .env
+- One wrong value means hours of debugging
+- Secrets are scattered across DMs with no audit trail
+
+## How It Works
+
+1. **Create a room**: `envsync create myroom .env` — Encrypts and stores your .env in a local vault
+2. **Share the key**: Give teammates the room key once, over a channel you trust (one-time, out-of-band)
+3. **Sync**: `envsync sync myroom` — Peers discover each other on the LAN and exchange an encrypted diff
+
+## Installation
+
+```bash
+npm install -g p2p-envsync
+```
+
+For the menu bar app:
+```bash
+npm install -g p2p-envsync-tray
+envsync-tray
+```
+
+## CLI Commands
+
+- `envsync create <room> <envfile>` — Create a new encrypted room from a .env file
+- `envsync sync <room>` — Sync with peers on the local network
+- `envsync status` — Show current rooms and sync status
+- `envsync diff <room>` — Show pending changes before syncing
+- `envsync backup <room>` — Push encrypted backup to GitHub
+- `envsync restore <room>` — Restore from GitHub backup
+
+## Key Features
+
+### Zero Server
+Pure peer-to-peer over LAN. No cloud servers, no SaaS dependency, no data leaves your network.
+
+### End-to-End Encrypted
+AES-256-GCM authenticated encryption. Values are encrypted at rest in the local vault and in transit during sync. Keys never leave your machines.
+
+### Offline-First
+Works without internet. The local vault keeps working offline, and syncs automatically when peers appear on the network.
+
+### Diff-Based Sync
+Only changed values transfer between peers, with full version history maintained locally.
+
+### GitHub Backup
+Optional encrypted backup to a private GitHub repo for cross-network sharing. The backup is encrypted — GitHub sees only ciphertext.
+
+### Menu Bar App
+Native macOS tray app (`p2p-envsync-tray`) provides a GUI for managing rooms, viewing sync status, and triggering syncs.
+
+## Comparison
+
+| Feature | P2P EnvSync | Doppler | 1Password | Slack |
+|---------|------------|---------|-----------|-------|
+| No server needed | Yes | No | No | N/A |
+| Free & open source | Yes | Freemium | No | N/A |
+| Works offline | Yes | No | Partial | No |
+| E2E encrypted | Yes | Yes | Yes | No |
+| Audit trail | Yes | Yes | Yes | No |
+| P2P / no cloud | Yes | No | No | N/A |
+
+## Security
+
+- Encryption: AES-256-GCM authenticated encryption
+- Key exchange: One-time out-of-band key sharing
+- Network: LAN-only peer discovery, no data sent to external servers
+- Storage: Encrypted vault on local filesystem
+- Backup: GitHub backups are encrypted before upload
+
+## FAQ
+
+**Is it safe to sync .env files over the network?**
+Yes. Every value is encrypted with AES-256-GCM using the room key before it leaves your machine. The key itself is never transmitted over the network. Peers without the key see only ciphertext.
+
+**What happens if I'm not on the same network as my team?**
+P2P EnvSync is LAN-first, so remote peers won't discover each other automatically. Your vault keeps working offline, and you can use the optional encrypted GitHub backup to exchange changes across networks.
+
+**How is this different from HashiCorp Vault?**
+Vault is a central secrets server you must deploy, unseal, and operate. P2P EnvSync has no server at all: teammates sync directly, which suits small teams that just need to share .env files safely.
+
+**Can I use this with Docker / CI/CD?**
+Yes for local Docker workflows: sync your .env, then point docker compose at it. For CI/CD, keep using your CI provider's secret store; P2P EnvSync targets developer machines.
+
+**What encryption does P2P EnvSync use?**
+AES-256-GCM authenticated encryption. Values are encrypted at rest in the local vault and in transit during sync.
+
+## Links
+
+- Website: https://p2penvsync.vercel.app
+- GitHub: https://github.com/RismanRJ/envsync
+- npm: https://www.npmjs.com/package/p2p-envsync
+- Documentation: https://p2penvsync.vercel.app/docs
+- Blog: https://p2penvsync.vercel.app/blog

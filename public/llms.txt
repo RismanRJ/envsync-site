@@ -1,0 +1,34 @@
+# P2P EnvSync
+
+> P2P encrypted .env sync for developer teams. No server. No cloud. Just your team on the same LAN.
+
+P2P EnvSync is a free, open-source CLI tool that lets developers sync .env files securely over a local network using peer-to-peer encryption (AES-256-GCM). No central server, no cloud dependency, works offline.
+
+## Quick Start
+
+```
+npm install -g p2p-envsync
+envsync create myroom .env
+envsync sync myroom
+```
+
+## Key Features
+
+- Zero server: P2P over LAN, no cloud dependency
+- End-to-end encrypted: AES-256-GCM, keys never leave your machines
+- Offline-first: works without internet, syncs when peers appear
+- Diff-based sync: only changed values transfer, with full history
+- GitHub backup: optional encrypted backup to a private repo
+- Menu bar app: native tray app for macOS (envsync-tray)
+
+## Links
+
+- Website: https://p2penvsync.vercel.app
+- GitHub: https://github.com/RismanRJ/envsync
+- npm: https://www.npmjs.com/package/p2p-envsync
+- Documentation: https://p2penvsync.vercel.app/docs
+- Blog: https://p2penvsync.vercel.app/blog
+
+## Detailed Info
+
+- [Full documentation](https://p2penvsync.vercel.app/llms-full.txt)
